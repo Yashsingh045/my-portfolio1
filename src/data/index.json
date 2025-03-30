@@ -1,0 +1,63 @@
+{
+    "skills": [
+      {
+        "id": "1",
+        "src": ["./images/python.png", "./images/javasript.png"],
+        "title": "Languages",
+        "description": ""
+      },
+      {
+        "id": "2",
+        "src": ["./images/html.png", "./images/css.png", "./images/javasript.png", "./images/react.png"],
+        "title": "Frontend",
+        "description": "Learning React"
+      },
+      {
+        "id": "3",
+        "src": ["./images/python.png"],
+        "title": "Backend",
+        "description": " Currently working on it"
+      },
+      {
+        "id": "4",
+        "src": ["./images/mysql.png"],
+        "title": "Databases",
+        "description": "Currently Learning MySQL"
+      },
+      {
+        "id": "5",
+        "src": ["./images/github.png", "./images/vscode.png", "./images/netlify.png","./images/figma.png"],
+        "title": "Tools & Technologies",
+        "description": ""
+      }
+    ],
+    "projects": [
+      {
+        "id": "1",
+        "src": "./images/project1.png",
+        "title": "Local Sports Club",
+        "description": "Developed a fully working website for a local sports club using HTML,CSS and JavaScript, where users can register for the club and can also view the events and news of the club. This project is made by three members me and my two friends.",
+        "link": "View In Github",
+        "link1": "View Live",
+        "languages": "HTML | CSS | JavaScript"
+      },
+      {
+        "id": "2",
+        "src": "./images/project2.png",
+        "title": "Portfolio Website",
+        "description": "A responsive portfolio website showcasing my skills and projects. Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript and React.",
+        "link": "View In Github",
+        "link1": "View Live",
+        "languages": "HTML | CSS | JavaScript | React"
+      },
+      {
+        "id": "3",
+        "src": "./images/pic1.png",
+        "title": "E-commerce Website",
+        "description": " Currently working on it",
+        "link": "View In Github",
+        "link1": "View Live",
+        "languages": "HTML | CSS | JavaScript | React | Tailwind CSS"
+      }
+    ]
+  }
