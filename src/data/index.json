@@ -33,12 +33,30 @@
     ],
     "projects": [
       {
+        "id": "5",
+        "src": "./images/foodkart.png",
+        "title": "FoodKart",
+        "description": "A responsive Restaurant finder and food ordering website . Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript, React.js and Tailwind CSS.",
+        "link": "https://github.com/Yashsingh045/foodKart",
+        "link1": "https://food-kart-yashsingh.vercel.app/",
+        "languages": "HTML | CSS | JavaScript | React.js | Tailwind CSS"
+      },
+      {
+        "id": "4",
+        "src": "./images/shooting.png",
+        "title": "Shooting Game",
+        "description": "A shooting game built using HTML, CSS, and JavaScript. The game features a simple yet engaging gameplay where player can shoot targets and score points.",
+        "link": "https://github.com/Yashsingh045/shooting_game1",
+        "link1": "https://shooting-game1.vercel.app/",
+        "languages": "HTML | CSS | JavaScript | React.js"
+      },
+      {
         "id": "1",
         "src": "./images/project1.png",
         "title": "Local Sports Club",
         "description": "Developed a fully working website for a local sports club using HTML,CSS and JavaScript, where users can register for the club and can also view the events and news of the club. This project is made by three members me and my two friends.",
-        "link": "View In Github",
-        "link1": "View Live",
+        "link": "https://github.com/Yashsingh045/Local_Sports_Club",
+        "link1": "https://local-sports-club.vercel.app/",
         "languages": "HTML | CSS | JavaScript"
       },
       {
@@ -46,9 +64,9 @@
         "src": "./images/project2.png",
         "title": "Portfolio Website",
         "description": "A responsive portfolio website showcasing my skills and projects. Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript and React.",
-        "link": "View In Github",
-        "link1": "View Live",
-        "languages": "HTML | CSS | JavaScript | React"
+        "link": "https://github.com/Yashsingh045/my-portfolio1",
+        "link1": "https://yashveer-singh.vercel.app/",
+        "languages": "HTML | CSS | JavaScript | React.js"
       },
       {
         "id": "3",

@@ -45,42 +45,46 @@ export default function MyProjects() {
                 <p className="text-md">{item.description}</p>
               </div>
               <div className="projects--section--card--links">
-              <p className="text-sm projects--link">
-                {item.link}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 20 19"
-                  fill="none"
-                >
-                  <path
-                    d="M4.66667 1.66675H18V15.0001M18 1.66675L2 17.6667L18 1.66675Z"
-                    stroke="currentColor"
-                    stroke-width="2.66667"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </p>
-              <p className="text-sm projects--link">
-                {item.link1}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 20 19"
-                  fill="none"
-                >
-                  <path
-                    d="M4.66667 1.66675H18V15.0001M18 1.66675L2 17.6667L18 1.66675Z"
-                    stroke="currentColor"
-                    stroke-width="2.66667"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </p>
+                <a href={item.link}>
+                <p className="text-sm projects--link">
+                  View in Github
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.66667 1.66675H18V15.0001M18 1.66675L2 17.6667L18 1.66675Z"
+                      stroke="currentColor"
+                      stroke-width="2.66667"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                </a>
+                <a href={item.link1}>
+                <p className="text-sm projects--link">
+                  View Live
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.66667 1.66675H18V15.0001M18 1.66675L2 17.6667L18 1.66675Z"
+                      stroke="currentColor"
+                      stroke-width="2.66667"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                </a>
               </div>
             </div>
           </div>
