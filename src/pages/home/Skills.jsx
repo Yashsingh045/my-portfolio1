@@ -4,7 +4,9 @@ export default function MySkills() {
   return (
     <section className="skills--section" id="Skills">
       <div className="portfolio--container">
-        <h2 className="skills-section--heading">My Skills</h2>
+        <h2 className="sub--title">My Skills</h2>
+        <br />
+        <h2 className="skills-section--heading">My Expertise</h2>
       </div>
       <div className="skills--section--container">
         {data?.skills?.map((item, index) => (

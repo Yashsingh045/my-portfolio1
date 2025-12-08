@@ -184,6 +184,7 @@ h2 {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
   /* font: 1.2em 'Copperplate'; */
   /* font: 1.7em "Lucida Console", "Courier New", monospace; */
 

@@ -20,7 +20,7 @@ export default function AboutMe() {
           <p className="hero--section-description">
             Apart from coding, I love to play Badminton.
             <br />
-            Currently I am learning Back-End Development.
+            Currently I am learning Mobile Application Development.
           </p>
         </div>
         <br />

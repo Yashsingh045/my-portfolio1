@@ -14,6 +14,9 @@ export default function HeroSection() {
             <br />I thrive in collaborative environments and enjoy working with diverse personalities. Let's connect and explore opportunities to innovate together!
           </p>
         </div>
+        <br />
+        <br />
+        <br />
         <a
           href="mailto:astomar6396@gmail.com?subject=Let's Connect&body=Hi, I'd like to connect with you!"
         >

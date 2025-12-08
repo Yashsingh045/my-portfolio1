@@ -1,12 +1,14 @@
 {
   "skills": [
     {
-      "id": "1",
+      "id": "5",
       "src": [
-        "./images/python.png",
-        "./images/javasript.png"
+        "./images/github.png",
+        "./images/vscode.png",
+        "./images/netlify.png",
+        "./images/figma.png"
       ],
-      "title": "Languages",
+      "title": "Tools & Technologies",
       "description": ""
     },
     {
@@ -17,7 +19,9 @@
         "./images/javasript.png",
         "./images/react.png",
         "./images/astro.png",
-        "./images/tailwind.png"
+        "./images/tailwind.png",
+        "./images/reactnative.png",
+        "./images/expo.png"
       ],
       "title": "Frontend"
     },
@@ -41,14 +45,13 @@
       "description": "Currently Learning MongoDB"
     },
     {
-      "id": "5",
+      "id": "1",
       "src": [
-        "./images/github.png",
-        "./images/vscode.png",
-        "./images/netlify.png",
-        "./images/figma.png"
+        "./images/python.png",
+        "./images/javasript.png",
+        "./images/typeScript.png"
       ],
-      "title": "Tools & Technologies",
+      "title": "Languages",
       "description": ""
     }
   ],
@@ -75,10 +78,19 @@
       "id": "6",
       "src": "./images/bikeracer.png",
       "title": "BikeRacer",
-      "description": "Quick Connect is a mobile-first video conferencing app that enables instant video and audio calls between multiple users. Built with modern web technologies, it provides a lightweight, user-friendly, and secure solution for virtual meetings.",
+      "description": "BikeRacer is an engaging mobile racing game built with React Native and Expo where player control a bike to navigate through traffic. The game features smooth gameplay mechanics, responsive controls (using accelerometer), and an immersive racing experience optimized for mobile devices.",
       "link": "https://github.com/Yashsingh045/Bike-Racer",
       "link1": "https://drive.google.com/file/d/1byEz1IC77rMpKxC2ZcghADhNQ6PCvVZ7/view",
-      "languages": "React Native | ZegoCloud | Expo | JavaScript | Tailwind CSS | Express.js | PostgreSQL | Prisma | Redis | Nodemailer | JWT"
+      "languages": "React Native | Expo | React Native Game Engine | Matter.js | Expo Sensors | JavaScript"
+    },
+    {
+      "id": "9",
+      "src": "./images/stepup.png",
+      "title": "StepUp",
+      "description": "StepUp is a manual fitness and workout logging app built with React Native that helps users track their daily workouts, set weekly goals, and monitor progress. With offline-first architecture using AsyncStorage, it provides a clean interface to log workouts, manage rest days, and visualize weekly fitness achievements.",
+      "link": "https://github.com/Yashsingh045/StepUp",
+      "link1": "",
+      "languages": "React Native | Expo | AsyncStorage | Context API | React Navigation | JavaScript"
     },
     {
       "id": "5",
@@ -86,7 +98,7 @@
       "title": "FoodKart",
       "description": "A responsive Restaurant finder and food ordering website . Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript, React.js and Tailwind CSS.",
       "link": "https://github.com/Yashsingh045/foodKart",
-      "link1": "https://food-kart-yashsingh.vercel.app/",
+      "link1": "",
       "languages": "HTML | CSS | JavaScript | React.js | Tailwind CSS"
     },
     {
