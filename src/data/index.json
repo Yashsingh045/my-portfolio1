@@ -1,81 +1,129 @@
 {
-    "skills": [
-      {
-        "id": "1",
-        "src": ["./images/python.png", "./images/javasript.png"],
-        "title": "Languages",
-        "description": ""
-      },
-      {
-        "id": "2",
-        "src": ["./images/html.png", "./images/css.png", "./images/javasript.png", "./images/react.png"],
-        "title": "Frontend",
-        "description": "Learning React"
-      },
-      {
-        "id": "3",
-        "src": ["./images/python.png"],
-        "title": "Backend",
-        "description": " Currently working on it"
-      },
-      {
-        "id": "4",
-        "src": ["./images/mysql.png"],
-        "title": "Databases",
-        "description": "Currently Learning MySQL"
-      },
-      {
-        "id": "5",
-        "src": ["./images/github.png", "./images/vscode.png", "./images/netlify.png","./images/figma.png"],
-        "title": "Tools & Technologies",
-        "description": ""
-      }
-    ],
-    "projects": [
-      {
-        "id": "5",
-        "src": "./images/foodkart.png",
-        "title": "FoodKart",
-        "description": "A responsive Restaurant finder and food ordering website . Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript, React.js and Tailwind CSS.",
-        "link": "https://github.com/Yashsingh045/foodKart",
-        "link1": "https://food-kart-yashsingh.vercel.app/",
-        "languages": "HTML | CSS | JavaScript | React.js | Tailwind CSS"
-      },
-      {
-        "id": "4",
-        "src": "./images/shooting.png",
-        "title": "Shooting Game",
-        "description": "A shooting game built using HTML, CSS, and JavaScript. The game features a simple yet engaging gameplay where player can shoot targets and score points.",
-        "link": "https://github.com/Yashsingh045/shooting_game1",
-        "link1": "https://shooting-game1.vercel.app/",
-        "languages": "HTML | CSS | JavaScript | React.js"
-      },
-      {
-        "id": "1",
-        "src": "./images/project1.png",
-        "title": "Local Sports Club",
-        "description": "Developed a fully working website for a local sports club using HTML,CSS and JavaScript, where users can register for the club and can also view the events and news of the club. This project is made by three members me and my two friends.",
-        "link": "https://github.com/Yashsingh045/Local_Sports_Club",
-        "link1": "https://local-sports-club.vercel.app/",
-        "languages": "HTML | CSS | JavaScript"
-      },
-      {
-        "id": "2",
-        "src": "./images/project2.png",
-        "title": "Portfolio Website",
-        "description": "A responsive portfolio website showcasing my skills and projects. Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript and React.",
-        "link": "https://github.com/Yashsingh045/my-portfolio1",
-        "link1": "https://yashveer-singh.vercel.app/",
-        "languages": "HTML | CSS | JavaScript | React.js"
-      },
-      {
-        "id": "3",
-        "src": "./images/pic1.png",
-        "title": "E-commerce Website",
-        "description": " Currently working on it",
-        "link": "View In Github",
-        "link1": "View Live",
-        "languages": "HTML | CSS | JavaScript | React | Tailwind CSS"
-      }
-    ]
-  }
+  "skills": [
+    {
+      "id": "1",
+      "src": [
+        "./images/python.png",
+        "./images/javasript.png"
+      ],
+      "title": "Languages",
+      "description": ""
+    },
+    {
+      "id": "2",
+      "src": [
+        "./images/html.png",
+        "./images/css.png",
+        "./images/javasript.png",
+        "./images/react.png",
+        "./images/astro.png",
+        "./images/tailwind.png"
+      ],
+      "title": "Frontend"
+    },
+    {
+      "id": "3",
+      "src": [
+        "./images/python.png",
+        "./images/nodeJs.png",
+        "./images/express.png"
+      ],
+      "title": "Backend",
+      "description": " Currently working on django"
+    },
+    {
+      "id": "4",
+      "src": [
+        "./images/mysql.png",
+        "./images/mongo.png"
+      ],
+      "title": "Databases",
+      "description": "Currently Learning MongoDB"
+    },
+    {
+      "id": "5",
+      "src": [
+        "./images/github.png",
+        "./images/vscode.png",
+        "./images/netlify.png",
+        "./images/figma.png"
+      ],
+      "title": "Tools & Technologies",
+      "description": ""
+    }
+  ],
+  "projects": [
+    {
+      "id": "8",
+      "src": "./images/EventEase.png",
+      "title": "EventEase",
+      "description": "EventEase is a cutting-edge, full-stack event management platform built with modern web technologies. Designed to streamline event creation, management, and attendee engagement, EventEase transforms how organizations handle events from conception to completion.",
+      "link": "https://github.com/Yashsingh045/EventEase",
+      "link1": "https://eventease-silk.vercel.app/",
+      "languages": "Astro | JavaScript | Tailwind CSS | Express.js | PostgreSQL | Prisma | Redis | Nodemailer | JWT"
+    },
+    {
+      "id": "7",
+      "src": "./images/QuickConnect.png",
+      "title": "QuickConnect",
+      "description": "Quick Connect is a mobile-first video conferencing app that enables instant video and audio calls between multiple users. Built with modern web technologies, it provides a lightweight, user-friendly, and secure solution for virtual meetings.",
+      "link": "https://github.com/Yashsingh045/Quick-Connect",
+      "link1": "https://drive.google.com/file/d/1Qw-ofuudghl6ancsAW5cllZ6e5Ldjjl4/view",
+      "languages": "React Native | ZegoCloud | Expo | JavaScript | Tailwind CSS | Express.js | PostgreSQL | Prisma | Redis | Nodemailer | JWT"
+    },
+    {
+      "id": "6",
+      "src": "./images/bikeracer.png",
+      "title": "BikeRacer",
+      "description": "Quick Connect is a mobile-first video conferencing app that enables instant video and audio calls between multiple users. Built with modern web technologies, it provides a lightweight, user-friendly, and secure solution for virtual meetings.",
+      "link": "https://github.com/Yashsingh045/Bike-Racer",
+      "link1": "https://drive.google.com/file/d/1byEz1IC77rMpKxC2ZcghADhNQ6PCvVZ7/view",
+      "languages": "React Native | ZegoCloud | Expo | JavaScript | Tailwind CSS | Express.js | PostgreSQL | Prisma | Redis | Nodemailer | JWT"
+    },
+    {
+      "id": "5",
+      "src": "./images/foodkart.png",
+      "title": "FoodKart",
+      "description": "A responsive Restaurant finder and food ordering website . Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript, React.js and Tailwind CSS.",
+      "link": "https://github.com/Yashsingh045/foodKart",
+      "link1": "https://food-kart-yashsingh.vercel.app/",
+      "languages": "HTML | CSS | JavaScript | React.js | Tailwind CSS"
+    },
+    {
+      "id": "4",
+      "src": "./images/shooting.png",
+      "title": "Shooting Game",
+      "description": "A shooting game built using HTML, CSS, and JavaScript. The game features a simple yet engaging gameplay where player can shoot targets and score points.",
+      "link": "https://github.com/Yashsingh045/shooting_game1",
+      "link1": "https://shooting-game1.vercel.app/",
+      "languages": "HTML | CSS | JavaScript | React.js"
+    },
+    {
+      "id": "1",
+      "src": "./images/project1.png",
+      "title": "Local Sports Club",
+      "description": "Developed a fully working website for a local sports club using HTML,CSS and JavaScript, where users can register for the club and can also view the events and news of the club. This project is made by three members me and my two friends.",
+      "link": "https://github.com/Yashsingh045/Local_Sports_Club",
+      "link1": "https://local-sports-club.vercel.app/",
+      "languages": "HTML | CSS | JavaScript"
+    },
+    {
+      "id": "2",
+      "src": "./images/project2.png",
+      "title": "Portfolio Website",
+      "description": "A responsive portfolio website showcasing my skills and projects. Features smooth scrolling, mobile-friendly navigation, and modern design principles using HTML, CSS, JavaScript and React.",
+      "link": "https://github.com/Yashsingh045/my-portfolio1",
+      "link1": "https://yashveer-singh.vercel.app/",
+      "languages": "HTML | CSS | JavaScript | React.js"
+    },
+    {
+      "id": "3",
+      "src": "./images/pic1.png",
+      "title": "E-commerce Website",
+      "description": " Currently working on it",
+      "link": "View In Github",
+      "link1": "View Live",
+      "languages": "HTML | CSS | JavaScript | React | Tailwind CSS"
+    }
+  ]
+}

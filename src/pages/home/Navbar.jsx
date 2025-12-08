@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
       <div>
-        <img src="./images/logo1.jpeg" alt="Logoipsum" style={{borderRadius:'30%'}}/>
+        <img src="./images/logo1.jpeg" alt="Logoipsum" style={{ borderRadius: '30%' }} />
       </div>
       <a
         className={`nav__hamburger ${navActive ? "active" : ""}`}
@@ -62,7 +62,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-          <Link
+            <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
               spy={true}
@@ -76,7 +76,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            
+
             <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
@@ -106,32 +106,27 @@ function Navbar() {
           </li>
           <li>
             <Link
-            onClick={closeMenu}
-            activeClass="navbar--active-content"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            to="Contact"
-            className="navbar--content"
+              onClick={closeMenu}
+              activeClass="navbar--active-content"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              to="Contact"
+              className="navbar--content"
             >
-            Contact Me
+              Contact Me
             </Link>
           </li>
         </ul>
       </div>
-      <Link
-        onClick={closeMenu}
-        activeClass="navbar--active-content"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        to=""
-        className="btn btn-outline-primary"
-      >
-        View Resume
-      </Link>
+      <a href="https://drive.google.com/file/d/1-OiWomiumO-7K_Ym8zOGifPeRHseqG9n/view?usp=sharing">
+        <button
+          className="btn btn-outline-primary"
+        >
+          View Resume
+        </button>
+      </a>
     </nav>
   );
 }
