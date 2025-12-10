@@ -26,7 +26,7 @@ export default function AboutMe() {
         <br />
         <br />
         <br />
-        <a href="https://drive.google.com/file/d/1-OiWomiumO-7K_Ym8zOGifPeRHseqG9n/view?usp=sharing">
+        <a href="https://drive.google.com/file/d/14K821oNtbspsiJ2I9JbY8RDlpvBbtFhP/view?usp=sharing">
           <button
             className="btn btn-outline-primary"
           >
