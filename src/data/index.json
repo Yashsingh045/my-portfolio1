@@ -57,6 +57,16 @@
   ],
   "projects": [
     {
+      "id": "9",
+      "src": "./images/cluster.png",
+      "title": "NST Cluster",
+      "description": "Designed and deployed a 5-node Kubernetes cluster (1 control plane, 4 worker nodes) on Ubuntu Server using kubeadm. Implemented Calico CNI for pod networking, and validated cluster functionality by deploying and exposing containerized applications. Ensured node-level networking, kernel tuning, and production-ready configurations.",
+      "link": "https://github.com/nst-sdc/nst-cluster",
+      "link1": "https://init.nstsdc.org/",
+      "languages": "Kubernetes (kubeadm) | containerd (CRI) | Linux (Ubuntu Server) | Calico CNI | Networking (CNI, NodePort) | Systemd | cgroups"
+
+    },
+    {
       "id": "8",
       "src": "./images/EventEase.png",
       "title": "EventEase",
