@@ -102,9 +102,8 @@ kind: Ingress
 metadata:
   name: ${REPO_NAME}-ingress
   namespace: $NAMESPACE
-  annotations:
-    kubernetes.io/ingress.class: traefik
 spec:
+  spec.ingressClassName: traefik
   rules:
   - host: ${REPO_NAME}.${DOMAIN}
     http:
