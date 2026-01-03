@@ -4,15 +4,13 @@ set -e
 # ---------------- INPUT ----------------
 REPO_URL=$1
 NAMESPACE=${2:-yashtesting}
+USE_LOCAL_IMAGE=${3:-false}  # pass "true" to use local image instead of GHCR
 # -------------------------------------
-
-
 
 DOMAIN=nstsdc.org
 
-
 if [ -z "$REPO_URL" ]; then
-  echo "Usage: ./deploy_with_domain.sh <github-repo-url> [domain] [namespace]"
+  echo "Usage: ./deploy_with_domain.sh <github-repo-url> [namespace] [use_local_image:true/false]"
   exit 1
 fi
 
@@ -20,13 +18,21 @@ fi
 REPO_NAME=$(basename -s .git "$REPO_URL" | tr '[:upper:]' '[:lower:]')
 GITHUB_USER=$(echo "$REPO_URL" | awk -F'/' '{print $(NF-1)}' | tr '[:upper:]' '[:lower:]')
 
-IMAGE_TAG=$(git ls-remote "$REPO_URL" HEAD | awk '{print substr($1,1,7)}')
-IMAGE="ghcr.io/${GITHUB_USER}/${REPO_NAME}:${IMAGE_TAG}"
+if [ "$USE_LOCAL_IMAGE" = "true" ]; then
+  IMAGE="${REPO_NAME}:latest"
+else
+  IMAGE_TAG=$(git ls-remote "$REPO_URL" HEAD | awk '{print substr($1,1,7)}')
+  IMAGE="ghcr.io/${GITHUB_USER}/${REPO_NAME}:${IMAGE_TAG}"
+fi
 
 echo "📦 Repo       : $REPO_NAME"
 echo "👤 GHCR User  : $GITHUB_USER"
 echo "🐳 Image      : $IMAGE"
 echo "🌍 Domain     : ${REPO_NAME}.${DOMAIN}"
+echo "📂 Namespace  : $NAMESPACE"
+
+# ---------------- CREATE NAMESPACE ----------------
+kubectl get ns $NAMESPACE >/dev/null 2>&1 || kubectl create ns $NAMESPACE
 
 # ---------------- CLONE ----------------
 if [ ! -d "$REPO_NAME" ]; then
@@ -52,8 +58,22 @@ fi
 echo "🐳 Building image..."
 docker build --platform linux/amd64 -t "$IMAGE" .
 
-echo "📤 Pushing image to GHCR..."
-docker push "$IMAGE"
+if [ "$USE_LOCAL_IMAGE" != "true" ]; then
+  echo "📤 Pushing image to GHCR..."
+  # Make sure you are logged in to GHCR before running this script
+  docker push "$IMAGE"
+
+  # ---------------- GHCR secret for k3s ----------------
+  kubectl create secret docker-registry ghcr-secret \
+    --docker-server=ghcr.io \
+    --docker-username=$GITHUB_USER \
+    --docker-password=$GHCR_PAT \
+    --docker-email=example@example.com \
+    -n $NAMESPACE 2>/dev/null || echo "Secret ghcr-secret already exists"
+  IMAGE_PULL_SECRET="  imagePullSecrets:\n  - name: ghcr-secret"
+else
+  IMAGE_PULL_SECRET=""
+fi
 
 # ---------------- K8s DEPLOYMENT ----------------
 cat <<EOF > deployment.yaml
@@ -77,6 +97,7 @@ spec:
         image: $IMAGE
         ports:
         - containerPort: 3000
+$IMAGE_PULL_SECRET
 EOF
 
 # ---------------- SERVICE (ClusterIP) ----------------
@@ -123,8 +144,14 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
 
-echo "⏳ Waiting for pod..."
-kubectl wait --for=condition=Ready pod -l app=$REPO_NAME -n $NAMESPACE --timeout=180s
+# ---------------- WAIT FOR DEPLOYMENT ----------------
+echo "⏳ Waiting for deployment..."
+if ! kubectl rollout status deployment/$REPO_NAME -n $NAMESPACE --timeout=180s; then
+  echo "❌ Deployment failed! Showing pod status and logs..."
+  kubectl get pods -n $NAMESPACE
+  kubectl logs -l app=$REPO_NAME -n $NAMESPACE --tail=20
+  exit 1
+fi
 
 # ---------------- FINAL OUTPUT ----------------
 echo ""
