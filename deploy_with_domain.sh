@@ -4,7 +4,7 @@ set -e
 # ---------------- INPUT ----------------
 REPO_URL=$1
 NAMESPACE=${2:-yashtesting}
-USE_LOCAL_IMAGE=${3:-false}   # true = use local image, false = push to GHCR
+USE_LOCAL_IMAGE=${3:-false}   # true = local image, false = push to Docker Hub
 # -------------------------------------
 
 DOMAIN=nstsdc.org
@@ -22,7 +22,7 @@ if [ "$USE_LOCAL_IMAGE" = "true" ]; then
   IMAGE="${REPO_NAME}:latest"
 else
   IMAGE_TAG=$(git ls-remote "$REPO_URL" HEAD | awk '{print substr($1,1,7)}')
-  IMAGE="ghcr.io/${GITHUB_USER}/${REPO_NAME}:${IMAGE_TAG}"
+  IMAGE="yashsingh045/${REPO_NAME}:${IMAGE_TAG}"   # <-- Docker Hub username
 fi
 
 echo "📦 Repo       : $REPO_NAME"
@@ -57,25 +57,31 @@ fi
 echo "🐳 Building image..."
 docker build --platform linux/amd64 -t "$IMAGE" .
 
-# ---------------- PUSH IMAGE IF GHCR ----------------
+# ---------------- PUSH IMAGE IF DOCKER HUB ----------------
 if [ "$USE_LOCAL_IMAGE" != "true" ]; then
-  if [ -z "$GHCR_PAT" ]; then
-    echo "❌ GHCR_PAT not set. Run: export GHCR_PAT=<your-token>"
+  if [ -z "$DOCKERHUB_PASSWORD" ]; then
+    echo "❌ Please set DOCKERHUB_PASSWORD environment variable"
+    echo "Usage: export DOCKERHUB_PASSWORD=<your-dockerhub-password-or-PAT>"
     exit 1
   fi
-  echo "📤 Pushing image to GHCR..."
+
+  echo "📤 Logging in to Docker Hub..."
+  echo "$DOCKERHUB_PASSWORD" | docker login -u yashsingh045 --password-stdin
+
+  echo "📤 Pushing image to Docker Hub..."
   docker push "$IMAGE"
 
-  # Create k8s secret for pulling private GHCR image
-  kubectl create secret docker-registry ghcr-secret \
-    --docker-server=ghcr.io \
-    --docker-username=$GITHUB_USER \
-    --docker-password=$GHCR_PAT \
+  # Create secret for private Docker Hub repo
+  kubectl create secret docker-registry dockerhub-secret \
+    --docker-server=https://index.docker.io/v1/ \
+    --docker-username=yashsingh045 \
+    --docker-password=$DOCKERHUB_PASSWORD \
     --docker-email=astomar6396@gmail.com \
-    -n $NAMESPACE 2>/dev/null || echo "Secret ghcr-secret exists"
-  IMAGE_PULL_SECRET="  imagePullSecrets:\n  - name: ghcr-secret"
+    -n $NAMESPACE 2>/dev/null || echo "Secret dockerhub-secret exists"
+
+  USE_SECRET="true"
 else
-  IMAGE_PULL_SECRET=""
+  USE_SECRET="false"
 fi
 
 # ---------------- DEPLOYMENT YAML ----------------
@@ -100,8 +106,15 @@ spec:
         image: $IMAGE
         ports:
         - containerPort: 3000
-$IMAGE_PULL_SECRET
 EOF
+
+# Add imagePullSecrets only if using Docker Hub private repo
+if [ "$USE_SECRET" = "true" ]; then
+cat <<EOF >> deployment.yaml
+      imagePullSecrets:
+      - name: dockerhub-secret
+EOF
+fi
 
 # ---------------- SERVICE YAML ----------------
 cat <<EOF > service.yaml
