@@ -4,13 +4,13 @@ set -e
 # ---------------- INPUT ----------------
 REPO_URL=$1
 NAMESPACE=${2:-yashtesting}
-USE_LOCAL_IMAGE=${3:-false}  # pass "true" to use local image instead of GHCR
+USE_LOCAL_IMAGE=${3:-false}   # true = use local image, false = push to GHCR
 # -------------------------------------
 
 DOMAIN=nstsdc.org
 
 if [ -z "$REPO_URL" ]; then
-  echo "Usage: ./deploy_with_domain.sh <github-repo-url> [namespace] [use_local_image:true/false]"
+  echo "Usage: $0 <github-repo-url> [namespace] [use_local_image:true/false]"
   exit 1
 fi
 
@@ -26,7 +26,6 @@ else
 fi
 
 echo "📦 Repo       : $REPO_NAME"
-echo "👤 GHCR User  : $GITHUB_USER"
 echo "🐳 Image      : $IMAGE"
 echo "🌍 Domain     : ${REPO_NAME}.${DOMAIN}"
 echo "📂 Namespace  : $NAMESPACE"
@@ -54,28 +53,32 @@ CMD ["npm", "start"]
 EOF
 fi
 
-# ---------------- BUILD & PUSH ----------------
+# ---------------- BUILD IMAGE ----------------
 echo "🐳 Building image..."
 docker build --platform linux/amd64 -t "$IMAGE" .
 
+# ---------------- PUSH IMAGE IF GHCR ----------------
 if [ "$USE_LOCAL_IMAGE" != "true" ]; then
+  if [ -z "$GHCR_PAT" ]; then
+    echo "❌ GHCR_PAT not set. Run: export GHCR_PAT=<your-token>"
+    exit 1
+  fi
   echo "📤 Pushing image to GHCR..."
-  # Make sure you are logged in to GHCR before running this script
   docker push "$IMAGE"
 
-  # ---------------- GHCR secret for k3s ----------------
+  # Create k8s secret for pulling private GHCR image
   kubectl create secret docker-registry ghcr-secret \
     --docker-server=ghcr.io \
     --docker-username=$GITHUB_USER \
     --docker-password=$GHCR_PAT \
     --docker-email=astomar6396@gmail.com \
-    -n $NAMESPACE 2>/dev/null || echo "Secret ghcr-secret already exists"
+    -n $NAMESPACE 2>/dev/null || echo "Secret ghcr-secret exists"
   IMAGE_PULL_SECRET="  imagePullSecrets:\n  - name: ghcr-secret"
 else
   IMAGE_PULL_SECRET=""
 fi
 
-# ---------------- K8s DEPLOYMENT ----------------
+# ---------------- DEPLOYMENT YAML ----------------
 cat <<EOF > deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -100,7 +103,7 @@ spec:
 $IMAGE_PULL_SECRET
 EOF
 
-# ---------------- SERVICE (ClusterIP) ----------------
+# ---------------- SERVICE YAML ----------------
 cat <<EOF > service.yaml
 apiVersion: v1
 kind: Service
@@ -116,7 +119,7 @@ spec:
     targetPort: 3000
 EOF
 
-# ---------------- INGRESS ----------------
+# ---------------- INGRESS YAML ----------------
 cat <<EOF > ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -153,9 +156,7 @@ if ! kubectl rollout status deployment/$REPO_NAME -n $NAMESPACE --timeout=180s; 
   exit 1
 fi
 
-# ---------------- FINAL OUTPUT ----------------
 echo ""
 echo "✅ DEPLOYMENT COMPLETE"
-echo "🌐 Application URL:"
-echo "➡️  http://${REPO_NAME}.${DOMAIN}"
+echo "🌐 Application URL: http://${REPO_NAME}.${DOMAIN}"
 echo ""
