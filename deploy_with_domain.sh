@@ -68,7 +68,7 @@ if [ "$USE_LOCAL_IMAGE" != "true" ]; then
     --docker-server=ghcr.io \
     --docker-username=$GITHUB_USER \
     --docker-password=$GHCR_PAT \
-    --docker-email=example@example.com \
+    --docker-email=astomar6396@gmail.com \
     -n $NAMESPACE 2>/dev/null || echo "Secret ghcr-secret already exists"
   IMAGE_PULL_SECRET="  imagePullSecrets:\n  - name: ghcr-secret"
 else
