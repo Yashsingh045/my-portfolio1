@@ -103,7 +103,7 @@ metadata:
   name: ${REPO_NAME}-ingress
   namespace: $NAMESPACE
 spec:
-  spec.ingressClassName: traefik
+  ingressClassName: traefik
   rules:
   - host: ${REPO_NAME}.${DOMAIN}
     http:
