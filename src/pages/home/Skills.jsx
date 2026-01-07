@@ -14,13 +14,15 @@ export default function MySkills() {
             <div className="skills--section--card--content">
               <h3 className="skills--section--title">{item.title}</h3>
               <div className="skills--section--card--img">
-                {item?.src?.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`${item.title} - ${i}`}
-                  />
-                ))}
+                {item?.src?.map((src, i) => {
+                  const techName = src.split("/").pop().split(".")[0];
+                  return (
+                    <div key={i} className="skill--img--container">
+                      <img src={src} alt={`${item.title} - ${i}`} />
+                      <span className="skill--name--tooltip">{techName}</span>
+                    </div>
+                  );
+                })}
               </div>
               {item.description && (
                 <p className="skills--section--description">

@@ -84,7 +84,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="MyProjects"
+              to="Projects"
               className="navbar--content"
             >
               Projects
@@ -98,7 +98,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="mySkills"
+              to="Skills"
               className="navbar--content"
             >
               Expertise

@@ -6,7 +6,11 @@
         "./images/github.png",
         "./images/vscode.png",
         "./images/netlify.png",
-        "./images/figma.png"
+        "./images/figma.png",
+        "./images/docker.png",
+        "./images/kubernetes.png",
+        "./images/linux.png",
+        "./images/vercel.png"
       ],
       "title": "Tools & Technologies",
       "description": ""
@@ -30,7 +34,9 @@
       "src": [
         "./images/python.png",
         "./images/nodeJs.png",
-        "./images/express.png"
+        "./images/express.png",
+        "./images/prisma.png",
+        "./images/flask.png"
       ],
       "title": "Backend",
       "description": " Currently working on django"
@@ -57,14 +63,22 @@
   ],
   "projects": [
     {
-      "id": "9",
+      "id": "11",
       "src": "./images/cluster.png",
       "title": "NST Cluster",
       "description": "Designed and deployed a 5-node Kubernetes cluster (1 control plane, 4 worker nodes) on Ubuntu Server using kubeadm. Implemented Calico CNI for pod networking, and validated cluster functionality by deploying and exposing containerized applications. Ensured node-level networking, kernel tuning, and production-ready configurations.",
       "link": "https://github.com/nst-sdc/nst-cluster",
       "link1": "https://init.nstsdc.org/",
       "languages": "Kubernetes (kubeadm) | containerd (CRI) | Linux (Ubuntu Server) | Calico CNI | Networking (CNI, NodePort) | Systemd | cgroups"
-
+    },
+    {
+      "id": "10",
+      "src": "./images/hello-sir.png",
+      "title": "Hello Sir",
+      "description": "It's a web-based voice assistant that activates with the wake word “Hello Sir” and processes natural language voice commands in the browser. Implemented search automation using a React frontend and Python backend, enabling hands-free web navigation, ensuring seamless voice recognition, command handling, and dynamic responses.",
+      "link": "https://github.com/nst-sdc/nst-cluster",
+      "link1": "https://init.nstsdc.org/",
+      "languages": "CSS | JavaScript | React.js | Python | Flask (Serverless API) | Browser Automation | Web Speech API"
     },
     {
       "id": "8",
@@ -94,7 +108,7 @@
       "languages": "React Native | Expo | React Native Game Engine | Matter.js | Expo Sensors | JavaScript"
     },
     {
-      "id": "9",
+      "id": "10",
       "src": "./images/stepup.png",
       "title": "StepUp",
       "description": "StepUp is a manual fitness and workout logging app built with React Native that helps users track their daily workouts, set weekly goals, and monitor progress. With offline-first architecture using AsyncStorage, it provides a clean interface to log workouts, manage rest days, and visualize weekly fitness achievements.",

@@ -325,7 +325,46 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 21.3px;
+}
 
+.skill--img--container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill--img--container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.skill--img--container:hover img {
+  transform: scale(1.1);
+}
+
+.skill--name--tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--darkblue);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+  text-transform: capitalize;
+}
+
+.skill--img--container:hover .skill--name--tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .skills--section--card:hover {
