@@ -63,7 +63,17 @@
   ],
   "projects": [
     {
-      "id": "11",
+      "id": "13",
+      "src": "./images/nexus.png",
+      "title": "Nexus Voice",
+      "description": "Nexus Voice is a production-ready, real-time Voice AI Assistant built with a high-performance Cascaded Pipeline Architecture. It achieves sub-second (<1.2s) end-to-end response times. Built with a streaming cascaded pipeline (STT → LLM → TTS), the system features intelligent response modes, custom digital signal processing (DSP), and multi-user session management via PostgreSQL and Redis.",
+      "link": "https://github.com/Yashsingh045/voice-assistant",
+      "link1": "https://voice-assistant-client-yst.vercel.app/",
+      "languages": "Python | React | FastAPI | Asyncio | Prisma ORM | WebSockets | Tailwind CSS | PostgreSQL | Redis"
+
+    },
+    {
+      "id": "10",
       "src": "./images/cluster.png",
       "title": "NST Cluster",
       "description": "Designed and deployed a 5-node Kubernetes cluster (1 control plane, 4 worker nodes) on Ubuntu Server using kubeadm. Implemented Calico CNI for pod networking, and validated cluster functionality by deploying and exposing containerized applications. Ensured node-level networking, kernel tuning, and production-ready configurations.",
@@ -72,22 +82,22 @@
       "languages": "Kubernetes (kubeadm) | containerd (CRI) | Linux (Ubuntu Server) | Calico CNI | Networking (CNI, NodePort) | Systemd | cgroups"
     },
     {
-      "id": "10",
-      "src": "./images/hello-sir.png",
-      "title": "Hello Sir",
-      "description": "It's a web-based voice assistant that activates with the wake word “Hello Sir” and processes natural language voice commands in the browser. Implemented search automation using a React frontend and Python backend, enabling hands-free web navigation, ensuring seamless voice recognition, command handling, and dynamic responses.",
-      "link": "https://github.com/nst-sdc/nst-cluster",
-      "link1": "https://init.nstsdc.org/",
-      "languages": "CSS | JavaScript | React.js | Python | Flask (Serverless API) | Browser Automation | Web Speech API"
-    },
-    {
-      "id": "8",
+      "id": "9",
       "src": "./images/EventEase.png",
       "title": "EventEase",
       "description": "EventEase is a cutting-edge, full-stack event management platform built with modern web technologies. Designed to streamline event creation, management, and attendee engagement, EventEase transforms how organizations handle events from conception to completion.",
       "link": "https://github.com/Yashsingh045/EventEase",
       "link1": "https://eventease-silk.vercel.app/",
       "languages": "Astro | JavaScript | Tailwind CSS | Express.js | PostgreSQL | Prisma | Redis | Nodemailer | JWT"
+    },
+    {
+      "id": "11",
+      "src": "./images/hello-sir.png",
+      "title": "Hello Sir",
+      "description": "It's a web-based voice assistant that activates with the wake word “Hello Sir” and processes natural language voice commands in the browser. Implemented search automation using a React frontend and Python backend, enabling hands-free web navigation, ensuring seamless voice recognition, command handling, and dynamic responses.",
+      "link": "https://github.com/Yashsingh045/Hello-SIR",
+      "link1": "https://hello-sir-yst.vercel.app/",
+      "languages": "Custom CSS | JavaScript | React | Python | Flask (Serverless API) | Browser Automation | Web Speech API"
     },
     {
       "id": "7",
@@ -99,6 +109,16 @@
       "languages": "React Native | ZegoCloud | Expo | JavaScript | Tailwind CSS | Express.js | PostgreSQL | Prisma | Redis | Nodemailer | JWT"
     },
     {
+      "id": "12",
+      "src": "./images/tiptap.png",
+      "title": "Tiptap Document Editor",
+      "description": "Tiptap Document Editor is a sophisticated Rich Text Editor designed to emulate a professional document editing experience like Google Docs. Its most defining feature is the custom pagination system that renders content in a structured A4 layout, rather than a continuous scroll.",
+      "link": "https://github.com/Yashsingh045/Tiptap-document-editor",
+      "link1": "https://tiptap-document-editor-rho.vercel.app/",
+      "languages": "React (Vite) | Tiptap | Tailwind CSS | ProseMirror Transaction API | Browser LocalStorage | Lucide React"
+
+    },
+    {
       "id": "6",
       "src": "./images/bikeracer.png",
       "title": "BikeRacer",
@@ -108,7 +128,7 @@
       "languages": "React Native | Expo | React Native Game Engine | Matter.js | Expo Sensors | JavaScript"
     },
     {
-      "id": "10",
+      "id": "8",
       "src": "./images/stepup.png",
       "title": "StepUp",
       "description": "StepUp is a manual fitness and workout logging app built with React Native that helps users track their daily workouts, set weekly goals, and monitor progress. With offline-first architecture using AsyncStorage, it provides a clean interface to log workouts, manage rest days, and visualize weekly fitness achievements.",
@@ -157,9 +177,9 @@
       "src": "./images/pic1.png",
       "title": "E-commerce Website",
       "description": " Currently working on it",
-      "link": "View In Github",
-      "link1": "View Live",
-      "languages": "HTML | CSS | JavaScript | React | Tailwind CSS"
+      "link": "https://github.com/Yashsingh045/ShopsMart_DevOps",
+      "link1": "",
+      "languages": "JavaScript | React.js | Tailwind CSS | Docker | Prisma ORM | MongoDb"
     }
   ]
 }

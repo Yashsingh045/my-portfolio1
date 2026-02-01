@@ -120,7 +120,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <a href="https://drive.google.com/file/d/1GNEN7YevWWJuK3G7vkOA2GHSGJKMJZ2c/view?usp=sharing">
+      <a href="https://my.newtonschool.co/api/v1/user/astomar6396/resume/?latex=true">
         <button
           className="btn btn-outline-primary"
         >
