@@ -34,20 +34,17 @@ export default function ContactMe() {
       setIsSubmitting(false);
     }
   };
+
   return (
     <>
       <section id="Contact" className="contact--section">
-        <div>
+        <div className="contact--section--header">
           <p className="sub--title">Get In Touch</p>
-          <hr />
-          <br />
-          <h2>Contact Me</h2>
-
+          <h2 className="sections--heading">Contact Me</h2>
+          <p className="contact--section--desc">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
         </div>
         <div className="contact--container">
-
-          <div >
-
+          <div>
             <form ref={form} className="contact--form--container" onSubmit={sendEmail}>
               <div className="container">
                 <label htmlFor="first-name" className="contact--label">
@@ -84,7 +81,7 @@ export default function ContactMe() {
                   />
                 </label>
                 <label htmlFor="phone-number" className="contact--label">
-                  <span className="text-md">phone-number</span>
+                  <span className="text-md">Phone Number</span>
                   <input
                     type="number"
                     className="contact--input text-md"
@@ -113,11 +110,11 @@ export default function ContactMe() {
                   className="btn btn-primary contact--form--btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Submit'}
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
               {submitMessage && (
-                <p className="submit-message" style={{ marginTop: '1rem', fontWeight: 'bold' }}>
+                <p className={`submit-message ${submitMessage.includes('successfully') ? 'submit-success' : 'submit-error'}`}>
                   {submitMessage}
                 </p>
               )}
@@ -125,35 +122,41 @@ export default function ContactMe() {
           </div>
 
           <div className="contact--side--container">
-            <h2>E-Mail</h2>
-            <br />
-            <p>astomar6396@gmail.com</p>
-            <br />
-            <br />
-            <br />
-            <h2>Address</h2>
-            <br />
-            <p>Pune, Maharashtra</p>
-            <p>
-              India
-            </p>
-            <br />
-            <br />
-            <h2>Connect with Me</h2>
-            <br />
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
-              <a href="https://www.linkedin.com/in/yashveer-singh-061bb1325/">
-                <img src="./images/linkedin.png" alt="LinkedIn" style={{ borderRadius: "50%" }} />
-              </a>
-              <a href="https://github.com/Yashsingh045">
-                <img src="./images/github.png" alt="GitHub" style={{ borderRadius: "50%" }} />
-              </a>
+            <div className="contact--info--card">
+              <span className="contact--info--icon">✉️</span>
+              <div>
+                <h3 className="contact--info--title">Email</h3>
+                <a href="mailto:astomar6396@gmail.com" className="contact--info--value">astomar6396@gmail.com</a>
+              </div>
+            </div>
 
+            <div className="contact--info--card">
+              <span className="contact--info--icon">📍</span>
+              <div>
+                <h3 className="contact--info--title">Location</h3>
+                <p className="contact--info--value">Pune, Maharashtra, India</p>
+              </div>
+            </div>
+
+            <div className="contact--info--card">
+              <span className="contact--info--icon">🤝</span>
+              <div>
+                <h3 className="contact--info--title">Connect with Me</h3>
+                <div className="contact--social--links">
+                  <a href="https://www.linkedin.com/in/yashveer-singh-061bb1325/" target="_blank" rel="noreferrer" className="contact--social--link">
+                    <img src="./images/linkedin.png" alt="LinkedIn" />
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href="https://github.com/Yashsingh045" target="_blank" rel="noreferrer" className="contact--social--link">
+                    <img src="./images/github.png" alt="GitHub" />
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
     </>
   );
 }
