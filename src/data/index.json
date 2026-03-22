@@ -63,6 +63,15 @@
   ],
   "projects": [
     {
+      "id": "14",
+      "src": "./images/visual.png",
+      "title": "Visual Product Comparison Engine",
+      "description": "A fully offline, on-device Visual Product Comparison Engine for fashion e-commerce — powered by deep learning embeddings and real-time vector similarity search across 20,000+ products.",
+      "link": "https://github.com/Yashsingh045/Visual-Product-Comparison-Engine",
+      "link1": "https://github.com/Yashsingh045/Visual-Product-Comparison-Engine/releases",
+      "languages": "Electron | React | TailwindCSS | shad cn/ui | HNSWLib (Node binding) | TensorFlow.js | ResNet-50 | Sharp.js | SQLite | electron-builder"
+
+    },{
       "id": "13",
       "src": "./images/nexus.png",
       "title": "Nexus Voice",
