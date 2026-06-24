@@ -26,7 +26,8 @@ export default function HeroSection() {
           >
             <button className="btn btn-primary">Let's Connect</button>
           </a>
-          <a href="https://my.newtonschool.co/api/v1/user/astomar6396/resume/?latex=true" target="_blank" rel="noreferrer">
+          <a href="https://drive.google.com/file/d/1HPv-bV4hmE8jZ8mTd_XZ9HAo8csjcAMz/view?usp=drive_link" target="_blank" rel="noreferrer">
+          {/* <a href="https://my.newtonschool.co/api/v1/user/astomar6396/resume/?latex=true" target="_blank" rel="noreferrer"> */}
             <button className="btn btn-outline-primary">View Resume</button>
           </a>
         </div>
